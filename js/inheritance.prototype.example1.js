@@ -20,7 +20,7 @@ Intern.prototype.realtimeLocation = function () {
 };
 
 Intern.prototype.strangeQuestion = function () {
-    return `Do you have driver license in yours ${this.age} and also can mess up with ${this.skill}?`
+    return `Could you mess up with ${this.skill} in yours ${this.age}?`
 };
 
 let anotherOneIntern1 = new Intern('Alex', 'Doe', 25, 'javascript', 'donetskyi', 'mariupol');
@@ -28,3 +28,29 @@ let anotherOneIntern1 = new Intern('Alex', 'Doe', 25, 'javascript', 'donetskyi',
 console.log(anotherOneIntern1.greetings() + '\n' +
             anotherOneIntern1.realtimeLocation() + '\n' +
             anotherOneIntern1.strangeQuestion());
+console.log(anotherOneIntern1.__proto__);
+
+let animal = {
+    eats: true,
+    breathingUnderwater: false
+};
+let rabbit = {
+    jumps: true
+};
+
+rabbit.__proto__ = animal;
+
+console.log(rabbit.breathingUnderwater);
+// if('kyc1' === 'kyc' || 'KYC') {
+//     console.log(1);
+// }
+// else {
+//     console.log(0);
+// }
+// if('kyc1' === 'kyc' || 'kyc1' === 'KYC') {
+//     console.log(1);
+// }
+// else {
+//     console.log(0);
+// }
+// console.log('KYC' === 'kyc' || 'KYC');
