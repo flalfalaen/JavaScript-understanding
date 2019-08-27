@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './js/class-inheritance-example1.js',
+    entry: './js/inheritance.prototype.example1.js',
     output: {
         filename: 'bundle.js'
     },

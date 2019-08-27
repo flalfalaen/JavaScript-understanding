@@ -47,7 +47,7 @@ class ExtendedClock extends Clock {
 
 }
 let extendedClock = new ExtendedClock({template: 'h-m-s'}, 1000);
-extendedClock.start();
+// extendedClock.start();
 //let clock = new Clock({template: 'h:m:s'});
 //clock.start();
 // let obj = {
@@ -60,3 +60,4 @@ extendedClock.start();
 // console.log(obj);
 
 //tasks link https://learn.javascript.ru/task/clock-class-extended
+
