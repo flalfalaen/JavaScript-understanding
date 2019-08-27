@@ -1,7 +1,13 @@
 module.exports = {
-    entry: './js/class-example1.js',
+    entry: './js/class-inheritance-example1.js',
     output: {
         filename: 'bundle.js'
     },
     watch: true
+    // devServer: {
+    //     port: 8080,
+    //     contentBase: './js',
+    //     watchContentBase: true
+    //
+    // }
 };
