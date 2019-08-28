@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './js/inheritance.prototype.example1.js',
+    entry: './js/loopThrough.array.object/loopThroughArray.js',
     output: {
         filename: 'bundle.js'
     },
