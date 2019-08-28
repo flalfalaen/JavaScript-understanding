@@ -40,9 +40,9 @@ console.log('\n-------for-of--------');
     for (let element of tempArray) {
         if (typeof element[1] === 'object') {
             tempKeyArray = Object.entries(element[1]);
-            console.log('index: ' + index + ' | Object name: {} ' + element[0]);
+            console.log('index: ' + index + ' | Object name: ' + element[0] + ': {}');
             for (let elementKey of tempKeyArray) {
-                console.log('index: ' + index + ' | key: value: ' + elementKey)
+                console.log('index: ' + index + ' | \t\tkey: value: ' + elementKey)
             }
         }
         else {
@@ -52,3 +52,24 @@ console.log('\n-------for-of--------');
     }
     index = null;
 }
+
+//hasOwnProperty
+console.log('\n-------for-in--------\n with hasOwnProperty');
+{
+    let tempObj = {};
+    for (let key in templateObject) {
+        console.log(key + ' -> ' + templateObject[key]);
+        tempObj = templateObject[key];
+        if (typeof tempObj === 'object') {
+            if (templateObject.hasOwnProperty(key)) {
+                for (let subKey in tempObj) {
+                    if (tempObj.hasOwnProperty(subKey)) {
+                        console.log('\t' + subKey + ' -> ' + tempObj[subKey]);
+                    }
+                }
+            }
+        }
+    }
+}
+
+console.log(templateObject.hasOwnProperty('location'));
