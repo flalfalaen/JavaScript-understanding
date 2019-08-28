@@ -5,6 +5,7 @@ let templateArray = []; //new Array();
 function rand(range) {
     return range > 1 ? Math.floor(Math.random() * range) : range = 2;
 }
+
 // data check functions
 function isString(value) {
     return typeof value === 'string';
@@ -22,19 +23,19 @@ for(let i = 0; i < (rand(9) + 2); i++) {
 }
 
 // 1 - for loop
-console.log('--------for loop---------');
+console.log('\n--------for loop---------');
 for(let i = 0; i < templateArray.length; i++) {
     console.log('index: ' + i + ' -  element: ' + templateArray[i]);
 }
 
 // 2 - ArrayName.prototype.forEach
-console.log('--------forEach----------');
+console.log('\n--------forEach----------');
 templateArray.forEach(function (element, index) {
     console.log('index: ' + index + ' -  element: ' + element);
 });
 
 // 3 for - of
-console.log('--------for-of-----------');
+console.log('\n--------for-of-----------');
 { //block for let
     let index = 0;
     for (let element of templateArray) {
@@ -45,13 +46,13 @@ console.log('--------for-of-----------');
 }
 
 // 4 for-in (deprecated for arrays, better its use to objects)
-console.log('--------for-in-----------');
+console.log('\n--------for-in-----------');
 for(let index in templateArray) {
     console.log('index: ' + index + ' -  element: ' + templateArray[index]);
 }
 
 // 5 method every();
-console.log('------method .every()-----');
+console.log('\n------method .every()-----');
 { //block for let
     let isOkay = templateArray.every(function (element, index) {
         console.log('index: ' + index + ' -  element: ' + templateArray[index]);
@@ -62,7 +63,7 @@ console.log('------method .every()-----');
 }
 
 // 6 method some();
-console.log('------method .some()------');
+console.log('\n------method .some()------');
 { //block for let
     let isOkay = templateArray.some(function (element, index) {
         console.log('index: ' + index + ' -  element: ' + templateArray[index]);
@@ -73,7 +74,7 @@ console.log('------method .some()------');
 }
 
 // 7 method reduce(); reduceRight();
-console.log('--method .reduce(Right)()--');
+console.log('\n--method .reduce(Right)()--');
 templateArray.reduce(function (total, element, index) {
     if(index - 1 === 0) {
         console.log('index: ' + 0 + ' -  element: ' + total);
@@ -82,7 +83,7 @@ templateArray.reduce(function (total, element, index) {
 });
 
 // 8 method filter(); //returns new filtered array
-console.log('-----method .filter()-----');
+console.log('\n-----method .filter()-----');
 { //block for let
     let temporaryArray = templateArray.filter(function (element, index) {
         console.log('index: ' + index + ' -  element: ' + element);
@@ -92,11 +93,11 @@ console.log('-----method .filter()-----');
 }
 
 // 9 method map();
-console.log('-----method .map()-------');
+console.log('\n-----method .map()-------');
 {
     let temporaryArray = templateArray.map(function (element, index) {
         console.log('index: ' + index + ' -  element: ' + element);
         return element + ' |MAPPED|';
     });
-    console.log(`mapped array. Piece of string added to every element: ${temporaryArray.length} elements = \n ${temporaryArray}`);
+    console.log(`This is mapped array. Added string flag to every element: ${temporaryArray.length} elements = \n ${temporaryArray}`);
 }
