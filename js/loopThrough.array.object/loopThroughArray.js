@@ -101,3 +101,17 @@ console.log('\n-----method .map()-------');
     });
     console.log(`This is mapped array. Added string flag to every element: ${temporaryArray.length} elements = \n ${temporaryArray}`);
 }
+
+// 10 do...while
+console.log('\n-----do while-------');
+{
+    let index = 0;
+    do {
+        console.log('index: ' + index + ' -  element: ' + templateArray[index]);
+        index++;
+    } while (index < templateArray.length)
+}
+
+//11 recursion
+console.log('\n-----recursion-------');
+//todo
