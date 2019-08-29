@@ -23,6 +23,7 @@ console.log(array1);
 //     }
 // }
 
+/*
 var val = 2;
 
 const obj2 = {
@@ -37,6 +38,7 @@ const obj2 = {
     }
 };
 obj2.func();
+*/
 
 function test1 () {
     var val = 3;
@@ -83,25 +85,67 @@ const obj2 = {
 obj2.func();
 
 
-
-
-
-
-
-
-
 function Animal(name) {
     this.name = name;
 }
 
 Animal.prototype.run = function () {
-    console.log(this.name + ' is running');
+    // console.log('hello from animals run');
+    return true //'running';
 };
-
+// console.log(Animal.prototype.run());
 function Rabbit() {
+    Animal.apply(this, arguments);
+    this.run = Animal.prototype.run;
+    // run.apply(this, arguments);
+    // Animal.prototype.run.apply(this, arguments);
+    //  console.log(arguments);
 
 }
 
-let rabbit = new Animal('monster');
+let rabbit = new Rabbit('monster');
+// rabbit.run = Animal.prototype.run;
+console.log(rabbit);
+console.log(typeof rabbit === 'object');
+console.log('rabbit is ' + rabbit.name + ' and ' + rabbit.run());
 
-console.log(rabbit.run());
+// function Animal(name) {
+//     this.name = name;
+// }
+//
+// Animal.prototype.run = function () {
+//     return ' running';
+// };
+// console.log(Animal.prototype.run());
+// function Rabbit() {
+//     Animal.apply(this, arguments);
+//     Animal.prototype.run.apply(this, arguments);
+//     console.log(arguments);
+//
+// }
+// let rabbit = new Rabbit('monster');
+// console.log('test1' + rabbit);
+// console.log('rabbit is ' + rabbit.name + ' and ');
+
+
+
+
+/*
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.run = function () {
+     return ' running';
+};
+console.log(Animal.constructor);
+function Rabbit() {
+   Animal.apply(this, arguments);
+
+   console.log(arguments);
+
+}
+let rabbit = new Rabbit('monster');
+
+console.log('rabbit is ' + rabbit.name + ' ');
+*/
