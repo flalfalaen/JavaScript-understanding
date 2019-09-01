@@ -60,21 +60,24 @@ Animal.prototype.run = function () {
     // console.log('hello from animals run');
     return true //'running';
 };
+Animal.prototype.swimming = function () {
+    // console.log('hello from animals run');
+    return false //'swimming';
+};
 // console.log(Animal.prototype.run());
 function Rabbit() {
     Animal.apply(this, arguments);
-    this.run = Animal.prototype.run;
+    this.methods = Animal.prototype;
     // run.apply(this, arguments);
     // Animal.prototype.run.apply(this, arguments);
     //  console.log(arguments);
 
 }
-
 let rabbit = new Rabbit('monster');
 // rabbit.run = Animal.prototype.run;
 console.log(rabbit);
 console.log(typeof rabbit === 'object');
-console.log('rabbit is ' + rabbit.name + ' and ' + rabbit.run());
+console.log('rabbit is ' + rabbit.name + '. Could he run? ' + rabbit.methods.run() + '. Swimming? ' + rabbit.methods.swimming() );
 
 
 
