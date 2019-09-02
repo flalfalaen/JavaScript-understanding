@@ -46,3 +46,39 @@ person.greetingsInObj_4();
 /////////////////////////////////////////////////
 console.log('\n-----inside of the object-----');
 console.log(person);
+
+
+///////////////////// arrow function
+// let first = 'hello first';
+// let sec = 'hello second';
+// let third = 'hello third';
+
+let obj = {
+    first: 'hello first',
+    second: 'hello second',
+    third: 'hello third',
+    func0() {
+        console.log(this.first);
+        console.log(this.second);
+        console.log(this.third);
+    },
+    func: function() {
+        console.log(this.first);
+        console.log(this.second);
+        console.log(this.third);
+    },
+    arrowFunc: null, //arrow function does now allow objects context and always be as global
+    methodWithArrowFunc: function () {
+        this.arrowFunc = () => {
+            console.log(this.first);
+            console.log(this.second);
+            console.log(this.third);
+        }
+    }
+};
+
+obj.func0();
+console.log('\n');
+obj.func();
+console.log('\n');
+obj.methodWithArrowFunc();

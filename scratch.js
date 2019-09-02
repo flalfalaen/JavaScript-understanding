@@ -62,7 +62,7 @@ Animal.prototype.swimming = function () {
     return false //'swimming';
 };
 function Rabbit() {
-    Animal.apply(this, body);
+    Animal.apply(this, arguments);
     this.animalsProto = Animal.prototype;
     // console.log(arguments);
 }
@@ -70,4 +70,5 @@ let rabbit = new Rabbit('monster');
 // rabbit.run = Animal.prototype.run;
 console.log(rabbit);
 console.log(typeof rabbit === 'object');
-console.log('rabbit is ' + rabbit.name + '. Could he run? ' + rabbit.animalsProto.run() + '. Swimming? ' + rabbit.animalsProto.swimming() );
+console.log('rabbit is ' + rabbit.name + '. Can he run? ' + rabbit.animalsProto.run() + '. How about swimming? ' + rabbit.animalsProto.swimming() );
+
