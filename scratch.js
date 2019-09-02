@@ -17,7 +17,6 @@ function test1 () {
     console.log('global var is calling inside func test1() {} as val = ' + val);
 }
 
-
 /////////////////////////////////////////////////////////////////////////////////
 
 var val = 'global 2';
@@ -52,132 +51,23 @@ const obj2 = {
 obj2.func();
 
 /////////////////////////////////////////////////////////////////////////////////
+
 function Animal(name) {
     this.name = name;
 }
-
 Animal.prototype.run = function () {
-    // console.log('hello from animals run');
     return true //'running';
 };
 Animal.prototype.swimming = function () {
-    // console.log('hello from animals run');
     return false //'swimming';
 };
-// console.log(Animal.prototype.run());
 function Rabbit() {
-    Animal.apply(this, arguments);
-    this.methods = Animal.prototype;
-    // run.apply(this, arguments);
-    // Animal.prototype.run.apply(this, arguments);
-    //  console.log(arguments);
-
+    Animal.apply(this, body);
+    this.animalsProto = Animal.prototype;
+    // console.log(arguments);
 }
 let rabbit = new Rabbit('monster');
 // rabbit.run = Animal.prototype.run;
 console.log(rabbit);
 console.log(typeof rabbit === 'object');
-console.log('rabbit is ' + rabbit.name + '. Could he run? ' + rabbit.methods.run() + '. Swimming? ' + rabbit.methods.swimming() );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-
-
-
-
-
-
-
-// cafe of broken dreams
-
-// function Animal(name) {
-//     this.name = name;
-// }
-//
-// Animal.prototype.run = function () {
-//     return ' running';
-// };
-// console.log(Animal.prototype.run());
-// function Rabbit() {
-//     Animal.apply(this, arguments);
-//     Animal.prototype.run.apply(this, arguments);
-//     console.log(arguments);
-//
-// }
-// let rabbit = new Rabbit('monster');
-// console.log('test1' + rabbit);
-// console.log('rabbit is ' + rabbit.name + ' and ');
-
-
-/*
-function Animal(name) {
-    this.name = name;
-}
-
-Animal.prototype.run = function () {
-     return ' running';
-};
-console.log(Animal.constructor);
-function Rabbit() {
-   Animal.apply(this, arguments);
-
-   console.log(arguments);
-
-}
-let rabbit = new Rabbit('monster');
-
-console.log('rabbit is ' + rabbit.name + ' ');
-*/
-
-
-
-
-
-// ajaxCall()
-
-// let tempArray = Object.values(obj);
-// for (let element of tempArray) {
-//     console.log('value ' + element);
-// }
-//
-// for (key in obj) {
-//     if (obj.hasOwnProperty(key)) {
-//         console.log('key ' + key + ' value ' + obj[key]);
-//     }
-// }
-
-/*
-var val = 2;
-
-const obj2 = {
-    val: 1,
-    func: function() {
-        function test() {
-            console.log('global a', this.val);
-        }
-
-        test();
-        console.log('context a', this.val);
-    }
-};
-obj2.func();
-*/
-
-
-
-// console.log(test1.prototype.constructor);
-// var test44 = new test1();
-// console.log('1111111', test44);
+console.log('rabbit is ' + rabbit.name + '. Could he run? ' + rabbit.animalsProto.run() + '. Swimming? ' + rabbit.animalsProto.swimming() );
