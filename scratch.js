@@ -24,7 +24,7 @@ var val = 'global 2';
 const obj2 = {
     val: 'obj2 1',
     func: function() {
-        // val = this.val;
+        // val = 'this.val';
         function test() {
             console.log('func()s test() ---' + this.val);
         }
@@ -38,17 +38,19 @@ const obj2 = {
         return this.val;
     },
     innerObj: {
+        val: 'test',
         val2: this.val,
         func2: function() {
             function func2_1() {
                 console.log('func2_1 --- ' + this.val);
             }
             func2_1();
-            return this.val2;
+            console.log('sdfsdfsdfsdfs' + this.val2);
         }
     }
 };
 obj2.func();
+obj2.innerObj.func2();
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -63,12 +65,32 @@ Animal.prototype.swimming = function () {
 };
 function Rabbit() {
     Animal.apply(this, arguments);
-    this.animalsProto = Animal.prototype;
-    // console.log(arguments);
+    this.__proto__ = Object.assign(Animal.prototype); // 1st method
+
 }
 let rabbit = new Rabbit('monster');
-// rabbit.run = Animal.prototype.run;
-console.log(rabbit);
+
+// Rabbit.prototype = Object.assign(Animal.prototype);
+
 console.log(typeof rabbit === 'object');
-console.log('rabbit is ' + rabbit.name + '. Can he run? ' + rabbit.animalsProto.run() + '. How about swimming? ' + rabbit.animalsProto.swimming() );
+// console.log('rabbit is ' + rabbit.name + '. Can he run? ' + rabbit.__proto__.run() + '. How about swimming? ' + rabbit.__proto__.swimming() ); // 1st method
+console.log('rabbit is ' + rabbit.name + '. Can he run? ' + rabbit.run() + '. How about swimming? ' + rabbit.swimming() ); // 1st method
+
+
+
+//
+// let test3 = 50;
+// function f() {
+//     let test3 = 75;
+//     function f2() {
+//         var test2 = 11;
+//         console.log(this.test3);  //this.context global
+//         console.log(test3);  //function context
+//     }
+//     console.log(this.test3); //this.context global
+//     console.log(test3);
+//     f2();
+// }
+// f();
+
 
