@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        p {
+            text-indent: 20px;
+        }
+        .float-left-img {
+            float: left;
+            margin: 0 10px 0 10px;
+        }
+        .text-decoration {
+            margin: 0 10px 0 10px;
+        }
+        .inline-block-center {
+            text-align: center;
+        }
+        .inline-block-center div {
+            display: inline-block;
+            text-align: left;
+        }
+        .centered {
+            height: 300px;
+            border: 1px dotted blue;
+            margin: 0 5px 0 5px;
+            text-indent: 20px;
+        }
+        .centered:first-child {
+            float: left;
+            margin-left: 15px;
+        }
+        .centered:last-child {
+            float: right;
+            margin-right: 15px;
+        }
+        .mb-10px {
+            margin-bottom: 10px;
+        }
+        .dom {
+            background-color: aquamarine;
+            opacity: 0.7;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="mail" style="width: 800px; border: 3px solid black; margin: auto; padding: 10px ">
+
+    <!-- HEADER ------------------------------------->
+    <div class="header mb-10px" style="border: 1px solid aqua; height: 100px; padding: 10px; position: relative">
+
+        <div style="position: relative; top: 50%; margin-top: -25px">
+            <img src="https://via.placeholder.com/160x50" alt="header image error" class="float-left-img" style="margin-right: 10px;">
+            <h3 style="float: left;">  Header text  </h3>
+            <img src="https://via.placeholder.com/100x50" alt="header image error" class="float-left-img" style="position: absolute; right: 0px;">
+
+        </div>
+
+    </div>
+
+
+    <!-- BODY --------------------------------------->
+    <div class="body mb-10px" style="border: 1px solid red;">
+
+        <h1 style="text-align: center"> BODY </h1>
+
+        <div class="img-with-description mb-10px">
+            <p style="text-align: justify" class="text-decoration"> <img src="https://via.placeholder.com/300x200" class="float-left-img" alt="header image error"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="text block mb-10px" style="width: 100%">
+            <p style="text-align: justify; clear: left" class="text-decoration">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="list mb-10px">
+            <ul>
+                <li>row 1 Lorem ipsum dolor sit amet</li>
+                <li>row 2 Lorem ipsum dolor sit amet</li>
+                <li>row 3 Lorem ipsum dolor sit amet</li>
+                <li>row 4 Lorem ipsum dolor sit amet</li>
+                <li>row 5 Lorem ipsum dolor sit amet</li>
+            </ul>
+        </div>
+
+        <div class="text-container mb-10px" style="height: 400px; border: 1px solid grey; position: relative; margin: 10px">
+            <h2 style="text-align: center">Text cards</h2>
+            <div style="position: absolute; top: 50%; margin-top: -150px;" class="inline-block-center">
+                <div style="width: 40%; text-align: justify;" class="centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div style="width: 25%; text-align: justify;" class="centered">Lorem ipsum dolor sit amusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div style="width: 25%; text-align: justify;" class="centered">Lorem ipsum dolor sit amet, consectem veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER ------------------------------------->
+    <div class="footer" style="border: 1px solid green; height: 100px; position: relative;">
+        <h4 style="margin: 0 0 0 10px; position: absolute; top: 50%; ">Footer_text <table> blah blah blah © </table></h4>
+    </div>
+
+</div>
+
+<div style="margin: 50px 0 50px 0; text-align: center">bottom-margin</div>
+
+<div class="" id="javascriptDomMethods" style="border: 1px solid black; padding: 15px;">
+
+</div>
+
+
+<script src="dom.js"></script>
+
+</body>
+</html>
