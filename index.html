@@ -10,7 +10,55 @@
 <body>
     <h1>Index.html</h1>
     <div id="output1"></div>
-    <script src="js/context/objectMethodThis.js"></script>
-<!--    <script src="bundle.js"></script>-->
+
+    <script>
+
+        let obj = {
+          name: 'simplename',
+          func: function (){
+              console.log(this);
+              function f() {
+                  console.log(this);
+              }
+              f();
+          }
+        };
+
+        function test() {
+            let name = 0;
+            console.log(this.name);
+        }
+
+        obj.func();
+        // test();
+
+
+        function Animal(name) {
+            this.name = name;
+        }
+        Animal.prototype.run = function () {
+            return true //'running';
+        };
+        Animal.prototype.swimming = function () {
+            return false //'swimming';
+        };
+        function Rabbit() {
+            Animal.apply(this, arguments);
+            this.__proto__ = Animal.prototype;
+            console.log('sdfsdfsdfs '+this);
+            // console.log(arguments);
+        }
+
+        let rabbit = new Rabbit('monster');
+        // rabbit.run = Animal.prototype.run;
+        console.log(rabbit);
+        console.log(typeof rabbit === 'object');
+        console.log('rabbit is ' + rabbit.name + '. Can he run? ' + rabbit.__proto__.run() + '. How about swimming? ' + rabbit.__proto__.swimming() );
+        console.log('rabbit is ' + rabbit.name + '. Can he run? ' + rabbit.run() + '. How about swimming? ' + rabbit.swimming() );
+
+        console.log(this.prototype);
+
+    </script>
+
 </body>
 </html>

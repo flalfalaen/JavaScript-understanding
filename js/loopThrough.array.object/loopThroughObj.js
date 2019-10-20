@@ -71,5 +71,25 @@ console.log('\n-------for-in--------\n with hasOwnProperty');
         }
     }
 }
+//simplified
+console.log('\n-------for-in--------\n simplified previous\n');
+{
+    for (let key in templateObject) {
+        console.log(`${key} -> ${templateObject[key]}`);
+        if(typeof templateObject[key] === 'object') {
+            for (let subKey in templateObject[key]){
+                if(templateObject[key].hasOwnProperty(subKey)){
+                    console.log(`\t${subKey} -> ${templateObject[key][subKey]}`);
+                }
+            }
+        }
+    }
+}
 
 console.log(templateObject.hasOwnProperty('location'));
+
+function test() {
+    console.log(this);
+}
+test();
+// console.log(this);
