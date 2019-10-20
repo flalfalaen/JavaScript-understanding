@@ -50,7 +50,12 @@
         }
 
         let rabbit = new Rabbit('monster');
-        // rabbit.run = Animal.prototype.run;
+
+        Rabbit.prototype = Animal.prototype; // 1st type of inheritance by creating link to parent object
+        Rabbit.prototype = Object.assign((Animal.prototype)); //second way to create method inheritance - buy option should be used if we need redeclare our method
+        Rabbit.prototype = Object.create((Animal.prototype));
+
+
         console.log(rabbit);
         console.log(typeof rabbit === 'object');
         console.log('rabbit is ' + rabbit.name + '. Can he run? ' + rabbit.__proto__.run() + '. How about swimming? ' + rabbit.__proto__.swimming() );
