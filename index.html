@@ -12,6 +12,22 @@
     <div id="output1"></div>
 
     <script>
+        let promiseObj = new Promise((resolve, reject) => {
+            let time = 2000;
+            setTimeout(function() {
+                time += 1000;
+            }, time);
+            resolve(console.log(`log after ${time}`));
+            reject(new Error(`cant resolve for ${time} milliseconds `));
+        });
+
+        promiseObj.then(
+            result => alert(result),
+            error => alert(error)
+        );
+
+
+        // -----------------------------------------------------------------
 
         let obj = {
           name: 'simplename',
